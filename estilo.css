@@ -1,1 +1,212 @@
+/*
+    PALETA DE COLORES PASTEL
+    - Fondo: #F8EFEF (Rosa muy claro)
+    - Rosa: #F4ACB7
+    - Morado: #BE9EC9
+    - Celeste: #A7C5EB
+    - Texto: #4F4F4F (Gris oscuro)
+*/
 
+/* --- Estilos Generales --- */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F8EFEF;
+    color: #4F4F4F;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    color: #F4ACB7;
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #BE9EC9;
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* --- Contenedor de la Malla Curricular --- */
+
+.malla-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.year-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+}
+
+.year-container h2 {
+    color: #A7C5EB;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #F8EFEF;
+    padding-bottom: 10px;
+}
+
+.semester-row {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.semester-column {
+    flex: 1;
+    min-width: 250px;
+}
+
+.semester-column h3 {
+    color: #F4ACB7;
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.materia-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* --- Estilos de los Ramos (Materias) --- */
+
+.materia {
+    background-color: #BE9EC9;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.materia:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Estados de los Ramos --- */
+
+.materia.aprobada {
+    background-color: #A7C5EB;
+    text-decoration: line-through;
+    color: #ffffff;
+    opacity: 0.8;
+    cursor: default;
+}
+
+.materia.aprobada:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.materia.bloqueada {
+    background-color: #F4ACB7;
+    cursor: not-allowed;
+    position: relative; /* Para el tooltip */
+    color: white;
+}
+
+.materia.bloqueada::after {
+    content: '🔒'; /* Icono de candado */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* --- Sección de Electivos --- */
+
+.electives-container {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.electives-container h2 {
+    color: #A7C5EB;
+    font-size: 2em;
+    border-bottom: 2px solid #F8EFEF;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.electives-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.elective-materia {
+    min-width: 250px;
+}
+
+/* --- Mensaje de Error (Pop-up) --- */
+
+.error-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F4ACB7;
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.error-popup.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Responsividad para Dispositivos Móviles --- */
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .semester-row {
+        flex-direction: column;
+    }
+
+    .year-container, .electives-container {
+        padding: 20px;
+    }
+
+    .materia {
+        padding: 12px 15px;
+        font-size: 0.9em;
+    }
+}
