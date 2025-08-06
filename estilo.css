@@ -1,1 +1,110 @@
+/* Fuente y Reset básico */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdf6f9;
+  color: #333;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(to right, #f8c8dc, #e3c8f8, #c8e8f8);
+  color: #444;
+}
+
+h1 {
+  margin-bottom: 0.2rem;
+}
+
+.frase {
+  font-style: italic;
+  color: #6a4c93;
+}
+
+/* Malla y columnas */
+#malla {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.semestre {
+  background-color: #ffffff;
+  border: 2px solid #eec8e8;
+  border-radius: 15px;
+  padding: 1rem;
+  width: 250px;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.semestre h3 {
+  text-align: center;
+  color: #a052b0;
+}
+
+/* Ramos */
+.ramo {
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+  background-color: #fce5f0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.ramo:hover {
+  background-color: #f8d6e6;
+}
+
+.ramo.aprobado {
+  background-color: #c8f8e4;
+  text-decoration: line-through;
+  color: #888;
+}
+
+.ramo.bloqueado {
+  background-color: #eaeaea;
+  cursor: not-allowed;
+  color: #aaa;
+}
+
+/* Electivos */
+#electivos {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.electivos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.electivo {
+  padding: 0.5rem 1rem;
+  background-color: #e4e0fb;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.electivo.aprobado {
+  background-color: #d2f6ec;
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .semestre {
+    width: 90%;
+  }
+}
 
